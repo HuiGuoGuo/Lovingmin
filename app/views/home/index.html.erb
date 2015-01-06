@@ -1,2 +1,409 @@
-<h1>大家好</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<style>
+  html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: -moz-radial-gradient(center, ellipse cover, #2424b7 0%, #222222 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #2424b7 0%, #222222 100%);
+    background: -o-radial-gradient(center, ellipse cover, #2424b7 0%, #222222 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #2424b7 0%, #222222 100%);
+    background: radial-gradient(center, ellipse cover, #2424b7 0%, #222222 100%);
+    overflow:hidden;
+  }
+
+  canvas {
+    position: absolute;
+  }
+
+  .ground{
+    background: #fff;
+    border-radius: 530% 500% 0 0;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+    overflow:hidden;
+  }
+
+  snowman{
+    position:absolute;
+    left: 50%;
+  }
+
+  snowman .body {
+    width: 200px;
+    height: 200px;
+    background: #ecf0f1;
+    box-shadow: -13px -8px 0px rgba(0,0,0,0.1) inset;
+    border-radius: 50%;
+    margin-top: -100px;
+    position: absolute;
+    right:0;left:0;margin:0 auto;
+    margin-top:270px;
+  }
+
+  snowman .body:before {
+    width: 100px;
+    height: 100px;
+    background: #ecf0f1;
+    box-shadow: -5px 0px 0px rgba(0,0,0,0.1) inset;
+    border-radius: 50%;
+    display: inline-block;
+    content: "";
+    position: relative;
+    top: -191px;
+    left: 46px;
+    z-index:30;
+  }
+
+  snowman .body:after {
+    width: 160px;
+    height: 160px;
+    background: #ecf0f1;
+    box-shadow: -7px -5px 0px rgba(0,0,0,0.1) inset;
+    border-radius: 50%;
+    display: inline-block;
+    content: "";
+    position: relative;
+    top: -203px;
+    left: 20px;
+  }
+
+  snowman .body .head {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 8px 41px 8px 0;
+    border-color: transparent #FA9A20 transparent transparent;
+    content: "";
+    position: relative;
+    top: -229px;
+    display: inline-block;
+    left: -50px;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    transform: rotate(10deg);
+    box-shadow: 0px 43px rgba(0,0,0,0.2) inset;
+    z-index:30;
+  }
+
+  snowman .body .head:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #2c3e50;
+    display: inline-block;
+    position: absolute;
+    top: -23px;
+    left: 20px;
+  }
+
+  snowman .body .head:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #2c3e50;
+    display: inline-block;
+    position: absolute;
+    top: -26px;
+    left: 40px;
+  }
+
+  .scarf {
+    border-bottom: 21px solid rgb(243, 77, 77);
+    border-left: 18px solid transparent;
+    border-right: 29px solid transparent;
+    height: 0;
+    width: 104px;
+    position: absolute;
+    top: -101px;
+    z-index: 30;
+    left: 50px;
+    border-radius: 0px 100% 5px 10px;
+  }
+
+  .scarf:after {
+    width: 74px;
+    height: 17px;
+    -webkit-transform: rotate(86deg);
+    -moz-transform: rotate(86deg);
+    transform: rotate(86deg);
+    background: rgb(243, 77, 77);
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 34px;
+    left: 15px;
+    border-radius: 50% 0% 50% 50%;
+    box-shadow: -4px 0px rgba(0,0,0,0.1) inset;
+  }
+  snowman .body .shadow {
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    width: 190px;
+    height: 30px;
+    position: absolute;
+    bottom: -29px;
+    z-index: 1;
+    left: 30px;
+  }
+  .left-hand {
+    position: absolute;
+    top: -30px;
+    left: -7px;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    transform: rotate(15deg);
+    border-bottom: 6px solid rgba(151, 102, 13, 1);
+    border-left: 2px solid transparent;
+    border-right: 0 solid transparent;
+    height: 0;
+    width: 36px;
+  }
+  .left-hand:before {
+    width: 81px;
+    left: -82px;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    -webkit-transform: rotate(-12deg);
+    -moz-transform: rotate(-12deg);
+    transform: rotate(-12deg);
+    top: 8px;
+    border-bottom: 7px solid rgba(128, 84, 6, 1);
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    height: 0;
+    z-index:30;
+  }
+  .left-hand:after {
+    width: 47px;
+    left: -88px;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    -webkit-transform: rotate(17deg);
+    -moz-transform: rotate(17deg);
+    transform: rotate(17deg);
+    top: 3px;
+    border-bottom: 4px solid rgba(128, 84, 6, 1);
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    height: 0;
+    border-radius: 20px 50% 10% 20%;
+  }
+
+  .right-hand {
+    position: absolute;
+    top: -30px;
+    right: -37px;
+    -webkit-transform: rotate(-12deg);
+    -moz-transform: rotate(-12deg);
+    transform: rotate(-12deg);
+    border-bottom: 6px solid rgba(151, 102, 13, 1);
+    border-right: 2px solid transparent;
+    border-left: 0 solid transparent;
+    height: 0;
+    width: 66px;
+  }
+  .right-hand:before {
+    width: 80px;
+    right: -82px;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    transform: rotate(10deg);
+    top: 7px;
+    border-bottom: 6px solid rgba(128, 84, 6, 1);
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
+    height: 0;
+    z-index: 30;
+  }
+  .right-hand:after {
+    width: 47px;
+    right: -47px;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    -webkit-transform: rotate(-16deg);
+    -moz-transform: rotate(-16deg);
+    transform: rotate(-16deg);
+    top: -6px;
+    border-bottom: 4px solid rgba(128, 84, 6, 1);
+    border-right: 3px solid transparent;
+    border-lrgy: 3px solid transparent;
+    height: 0;
+    border-radius: 20px 50% 10% 20%;
+  }
+
+  snowman .hat {
+    top: -253px;
+    left: 76px;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    transform: rotate(10deg);
+    position: absolute;
+    border-radius: 0;
+    z-index: 20;
+    border-top: 56px solid rgb(37, 37, 37);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    height: 0;
+    width: 60px;
+    border-bottom: 27px solid rgb(246, 62, 62);
+  }
+
+  snowman .buttons {
+    height: 8px;
+    width: 8px;
+    background: #2c3e50;
+    position: absolute;
+    border-radius: 50%;
+    left: 60px;
+    top: -23px;
+    z-index: 30;
+  }
+
+  snowman .buttons:before {
+    height: 10px;
+    width: 10px;
+    background: #2c3e50;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    top: -30px;
+    left: 5px;
+  }
+
+  snowman .buttons:after {
+    height: 6px;
+    width: 6px;
+    background: #2c3e50;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    top: 30px;
+    left: 5px;
+  }
+</style>
+
+<canvas id="canvas"></canvas>
+
+<div class="ground"></div>
+
+<snowman>
+<div class="body">
+  <div class="head"></div>
+  <div class="hat"></div>
+  <div class="scarf"></div>
+  <div class="buttons"></div>
+  <div class="hands">
+    <div class="right-hand"></div>
+    <div class="left-hand"></div>
+  </div>
+  <div class="shadow"></div>
+</div>
+</snowman>
+
+<script>
+  function Star(x, y, s /*radius*/ , p /*num points*/ ) {
+    this.x = x;
+    this.y = y;
+    this.s = s;
+    this.p = p;
+    this.img = document.createElement('canvas');
+    var context = this.img.getContext('2d'),
+    len = this.s / 1.45;
+    this.img.height = this.img.width = this.s * 2;
+    context.translate(this.s, this.s);
+    context.rotate((Math.PI * 1 / 10));
+    context.beginPath();
+    for (var i = 0; i < p; i++) {
+      context.lineTo(0, s);
+      context.rotate((Math.PI * 2 / (p * 2)));
+      context.lineTo(0, -s);
+      context.rotate((Math.PI * 2 / (p * 2)));
+    }
+    context.closePath();
+    context.shadowBlur = this.s / 3;
+    context.shadowColor = 'rgba(255,255,255,.9)';
+    context.fillStyle = 'rgba(255,255,255,.45)';
+    context.fill();
+  }
+  window.requestAnimationFrame = (function(){
+    return  window.requestAnimationFrame       ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame    ||
+    function( callback ){
+      window.setTimeout(callback, 1000 / 60);
+    };
+  })();
+  var canvas, context, height, width, stars;
+  setTimeout(init, 10);
+
+  function init() {
+    canvas = document.getElementById('canvas');
+    context = canvas.getContext('2d');
+    height = canvas.height = document.body.offsetHeight;
+    width = canvas.width = document.body.offsetWidth;
+    stars = [];
+
+    for (var i = 0; i < 200; i++) {
+      var x = Math.random() * width,
+      y = Math.random() * height,
+      s = Math.random() * 5 + 2,
+      p = Math.random() * 8 + 2;
+      var s = new Star(x, y, s, p);
+      s.vx = Math.random() * 2 - 1;
+      s.vy = Math.random() * 2 + 1;
+      s.r = Math.random() * 360;
+      stars.push(s);
+    }
+
+    update();
+    render();
+  }
+
+
+  function update() {
+    for (var i = 0, l = stars.length; i < l; i++) {
+      stars[i].r += stars[i].vx / 10;
+      stars[i].x += stars[i].vx;
+      stars[i].y += stars[i].vy;
+      if (stars[i].y > height) {
+        stars[i].y = -stars[i].s;
+        stars[i].vx = Math.random() * 2 - 1;
+        stars[i].vy = Math.random() * 2 + 1;
+      }
+    }
+    setTimeout(update, 1000 / 30);
+  }
+
+  function render() {
+    context.clearRect(0, 0, width, height);
+    for (var i = 0, l = stars.length; i < l; i++) {
+      context.save();
+      context.translate(stars[i].x, stars[i].y);
+      context.rotate(stars[i].r);
+      context.drawImage(stars[i].img, 0, 0);
+      context.restore();
+    }
+    requestAnimationFrame(render);
+  }
+</script>
+
+<script type="text/javascript">
+  var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+  document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fac45a0f68a119fbe4d1c4c3ac3044dbd' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
