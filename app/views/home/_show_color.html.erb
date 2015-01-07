@@ -8,8 +8,8 @@
 
     <div class="row">
       <div class="wow rollIn bg-yellow" data-wow-delay="0.5s"><a href="http://www.baidu.com">2</a></div>
-      <div class="wow pulse bg-red" onclick="javascript:alert('才不告诉你');" data-wow-iteration="5" data-wow-duration="0.15s">*_*&nbsp;更多&nbsp;*_*</div>
-      <div class="wow bounceInRight bg-blue"><a href="http://www.baidu.com">3</a></div>
+      <div class="wow pulse bg-red" onclick="waring();" data-wow-iteration="5" data-wow-duration="0.15s">*_*&nbsp;更多&nbsp;*_*</div>
+      <div class="wow bounceInRight bg-blue"><a href="/home/index5">3</a></div>
     </div>
 
     <div class="row">
@@ -22,6 +22,16 @@
     if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
       new WOW().init();
     };
+  </script>
+  <script>
+    function waring(){
+      var dialog = jDialog.message("直接问我呗=_=",{
+        autoClose : 5000,    // 3s后自动关闭
+        padding : '30px',    // 设置内部padding
+        modal: true         // 非模态，即不显示遮罩层
+      });
+    }
+
   </script>
 
   <style type="text/css">

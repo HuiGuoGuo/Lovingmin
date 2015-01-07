@@ -116,6 +116,7 @@
 .j-dialog .j-dialog-btn.x-highlight:hover,
 .j-dialog .j-dialog-btn.x-highlight.x-hlhover {
     background-position:0 -28px;
+    left: 20px;
 }
 
 

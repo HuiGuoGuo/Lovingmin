@@ -10,6 +10,8 @@ class HomeController < ApplicationController
 
   def index4
   end
+  def index5
+  end
 
  def to_time(time)
     unless time==nil

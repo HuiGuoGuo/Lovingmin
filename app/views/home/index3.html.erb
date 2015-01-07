@@ -1,22 +1,62 @@
 
-  <script>
+<script>
 
-    $(function(){
-          $(".showtime").hide();
-      var dialog = jDialog.confirm('你是小星星吗?',{
+  $(function(){
+    $(".showtime").hide();
+    //为本人
+    var dialog = jDialog.confirm('<a style="color:red;margin-left:30px;font-size:28px;"><font face="华文行楷">你是真的小星星吗?</font></a>',{
+    handler : function(button,dialog) {
+      $(".showtime").show(3000);
+      $("#show_color").html("<%= j(render :partial => "show_color")%>");
+      dialog.close();
+    }
+  },
+  //不为本人
+  {
+    handler : function(button,dialog) {
+      dialog.close();
+
+      //喜欢
+      var dialog2 = jDialog.confirm2('<a style="color:red;margin-left:20px;font-size:28px;"><font face="华文行楷">那你喜欢小星星吗?</font></a>',{
+      handler : function(button,dialog) {
+        dialog2.close();
+        var dialog4 = jDialog.confirm3('<a style="color:red;margin-left:20px;font-size:28px;"><font face="华文行楷">你的性别?</font></a>',{
         handler : function(button,dialog) {
-          $(".showtime").show(3000);
-          $("#show_color").html("<%= j(render :partial => "show_color")%>");
-          dialog.close();
-        }
-        },{
+          dialog4.close();
+          var dialog5 = jDialog.message('<div><img src="assets/zaijian.jpg" width=280></img></div><div><a style="color:red;margin-left:20px;font-size:28px;"><font face="华文行楷">你已经被我拉进<<黑名单>></font></a></div>',{
+          handler : function(button,dialog) {
+          }
+        });
+      }
+      },{
+      handler : function(button,dialog) {
+        dialog4.close();
+        var dialog6 = jDialog.message('<div><img src="assets/zaijian.jpg" width=280></img></div><div><a style="color:red;margin-left:20px;font-size:28px;"><font face="华文行楷">你已经被我拉进<<黑名单>></font></a></div>',{
         handler : function(button,dialog) {
-          alert('你点击了取消！');
-          //dialog.close();
         }
       });
-    });
-  
+    }
+  }
+  );
+}
+      },
+      //不喜欢
+      {
+        handler :function(dialog){
+          //不喜欢 << 弹出图片
+          dialog2.close();
+          var dialog3 = jDialog.message('<div><img src="assets/zaijian.jpg" width=280></img></div><div><a style="color:red;margin-left:20px;font-size:28px;"><font face="华文行楷">你已经被我拉进<<黑名单>></font></a></div>',{
+          handler : function(button,dialog) {
+          }
+        });
+      }
+    }
+    );
+    //dialog.close();
+  }
+});
+});
+
   </script>
 <div class="showtime" id="showtime">
   <h4 id="showtimes"> </h4>
@@ -25,10 +65,7 @@
   <a id="showmini" > </a>
 </div> 
 
-
 <div class="color"style="margin-left:350px;top:200px;" id="show_color">
-
-
 </div>
 
 

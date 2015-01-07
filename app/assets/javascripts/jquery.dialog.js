@@ -1006,6 +1006,7 @@ var jDialog = (function($, undefined){
         // 确认按钮
         acceptButton = $.extend({
             type : 'highlight',
+             text : 'Yeap!!!',      // 按钮的显示文本
             handler : function(btn,dlg){
                 dlg.close();
             }
@@ -1013,7 +1014,7 @@ var jDialog = (function($, undefined){
 
         // 取消按钮
         cancelButton = $.extend({
-            text : '取消',
+            text : '不是',
             handler : function(btn,dlg){
                 dlg.close();
             }
@@ -1026,6 +1027,148 @@ var jDialog = (function($, undefined){
             buttons : [].concat([acceptButton,cancelButton]),
         });
         return _dialog(options);
+    };
+    var _confirm2 = function(content,acceptButton,cancelButton,options){ options = options || {}; 
+        // 确认按钮
+        acceptButton = $.extend({
+            type : 'highlight',
+           text : '当然喜欢',
+            handler : function(btn,dlg){
+                dlg.close();
+            }
+        },acceptButton || {});
+
+        // 取消按钮
+        cancelButton = $.extend({
+            text : '不喜欢',
+            handler : function(btn,dlg){
+                dlg.close();
+            }
+        },cancelButton || {});
+
+        options = $.extend({
+            wobbleEnable : true
+        },options,{
+            content : content,
+            buttons : [].concat([acceptButton,cancelButton]),
+        });
+        return _dialog(options);
+    };
+    var _confirm3 = function(content,acceptButton,cancelButton,options){ options = options || {}; 
+        // 确认按钮
+        acceptButton = $.extend({
+            type : 'highlight',
+           text : '男',
+            handler : function(btn,dlg){
+                dlg.close();
+            }
+        },acceptButton || {});
+
+        // 取消按钮
+        cancelButton = $.extend({
+            text : '女',
+            handler : function(btn,dlg){
+                dlg.close();
+            }
+        },cancelButton || {});
+
+        options = $.extend({
+            wobbleEnable : true
+        },options,{
+            content : content,
+            buttons : [].concat([acceptButton,cancelButton]),
+        });
+        return _dialog(options);
+    };
+
+
+
+    /**
+     * 普通消息框，无title
+     * @param       {String}  content 消息的内容
+     *
+     * @param       {Object}  options dialog的其他配置项
+     *
+     * @return      {Object}  当前dialog对象
+     */
+    var _message = function(content,options){
+        options = options || {};
+        options = $.extend({
+            content : content,
+            padding : '20px 10px 20px 10px',
+            textAlign : 'center'
+        },options,{
+            showTitle : false
+        });
+        return _dialog(options);
+    };
+
+
+    /**
+     * 一个带有小三角箭头的tip消息框，无title，非模态
+     *
+     * @param       {String}  content 消息的内容
+     *
+     * @param       {Object}  anchor 小三角箭头的相关配置
+     *
+     * @p-config    {jQ-Elm}  target    小箭头需要指向的HTML节点，且用jQuery封装的对象
+     * @p-config    {String}  position  tip消息框出现的位置（相对于target），可选：
+     *                                  top / top-left / top-right
+     *                                  right / right-top / right-bottom
+     *                                  bottom / bottom-left / bottom-right
+     *                                  left / left-top / left-bottom
+     * @p-config    {Object}  offset    消息框与target之间的位置偏移
+     * @p-c-item    {Integer} top       dialog与target之间顶部偏移，position中含top时生效
+     * @p-c-item    {Integer} right     dialog与target之间右侧偏移，position中含right时生效
+     * @p-c-item    {Integer} bottom    dialog与target之间底部偏移，position中含bottom时生效
+     * @p-c-item    {Integer} left      dialog与target之间左侧偏移，position中含left时生效
+     * @p-config    {Integer} trianglePosFromStart 小三角距离弹窗边缘的距离
+     *
+     * @param       {Object}  options dialog的其他配置项
+     *
+     * @return      {Object}  当前dialog对象
+     */
+    var _tip = function(content,anchor,options){
+        options = options || {};
+        options = $.extend({
+            padding : '20px 10px 20px 10px',
+            textAlign : 'center',
+            width : 'auto',
+            anchor : {
+                target : null,
+                position : 'right'
+            }
+        },options,{
+            content : content,
+            anchor : anchor,
+            showTitle : false,
+            showShadow: false,
+            modal : false,
+            fixed : false
+        });
+        return _dialog(options);
+    };
+
+    /**
+     * 在对话框中显示一个iframe页面
+     * @param       {String}  url     消息的内容
+     *
+     * @param       {Object}  options dialog的其他配置项
+     *
+     * @return      {Object}  当前dialog对象
+     */
+    var _iframe = function(url,options){
+        options = options || {};
+        options = $.extend({
+            content : url,
+            title : '窗口',
+            width:600,
+            height:300
+        },options,{
+            contentType : 'iframe'
+        });
+        return _dialog(options);
+
     };
 
 
@@ -1123,6 +1266,8 @@ var jDialog = (function($, undefined){
         dialog  : _dialog,
         alert   : _alert,
         confirm : _confirm,
+        confirm2 : _confirm2,
+        confirm3 : _confirm3,
         message : _message,
         tip     : _tip,
         iframe  : _iframe
