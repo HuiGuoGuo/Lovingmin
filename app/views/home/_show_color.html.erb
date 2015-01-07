@@ -1,0 +1,40 @@
+
+  <div class="dowebok">
+    <div class="row">
+      <div class="wow rollIn bg-blue">温柔</div>
+      <div class="wow bounceInDown bg-green"><a href="/home/index4">1</a></div>
+      <div class="wow lightSpeedIn bg-purple">娇美</div>
+    </div>
+
+    <div class="row">
+      <div class="wow rollIn bg-yellow" data-wow-delay="0.5s"><a href="http://www.baidu.com">2</a></div>
+      <div class="wow pulse bg-red" onclick="javascript:alert('才不告诉你');" data-wow-iteration="5" data-wow-duration="0.15s">*_*&nbsp;更多&nbsp;*_*</div>
+      <div class="wow bounceInRight bg-blue"><a href="http://www.baidu.com">3</a></div>
+    </div>
+
+    <div class="row">
+      <div class="wow bounceInLeft bg-green">清新</div>
+      <div class="wow flipInX bg-purple"><a href="http://www.baidu.com">4</a></div>
+      <div class="wow bounceInRight bg-yellow" >典雅</div>
+    </div>
+
+  <script>
+    if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+      new WOW().init();
+    };
+  </script>
+
+  <style type="text/css">
+    *{margin:0;padding:0;}
+    body h1{width:100%;margin:80px 0;font-size:50px;font-weight:500;text-align:center;}
+    body .txt{margin:80px 0;font-size:16px;text-align:center;}
+    .dowebok{margin:0 auto;}
+    .dowebok ul{list-style-type:none;}
+    .dowebok .row{font-size:0;text-align:center;}
+    .dowebok .wow{display:inline-block;width:200px;height:200px;margin:30px 15px 0;border-radius:50%;font:30px/200px "Microsoft Yahei";vertical-align:top;*display:inline;zoom:1;}
+    .bg-green{background:#5bd5a0;}
+    .bg-blue{background:#1daee9;}
+    .bg-purple{background:#c843a5;}
+    .bg-red{background:#eb3980;}
+    .bg-yellow{background:#ffcc35;}
+  </style>
