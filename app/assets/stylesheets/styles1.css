@@ -24,14 +24,20 @@ div.btnbg {
   margin:0px auto; 
 }
 .showtime{
-  top:0;
+  top:380px;
+  right:0px;
   position:fixed;
   color: red;
 }
-#showmini{
-  top:60px;
+.timeline{
   position:fixed;
-  color: red;
-  font-size: 30px;
+  top:30px;
+  margin-left: 400px;
+  margin-right: auto;
 }
-
+.bottom{
+  position:fixed;
+  top: 900px;
+  margin-left: 0px;
+  margin-right: auto;
+}

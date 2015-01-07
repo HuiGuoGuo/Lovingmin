@@ -81,7 +81,7 @@ function show_cur_times(){
  document.getElementById("showtimes").innerHTML= date_str;
  document.getElementById("showday").innerHTML= day_str;
  document.getElementById("showhours").innerHTML= hours_str;
- document.getElementById("showmini").innerHTML= minitus_str;
+ document.getElementById("showmi").innerHTML= minitus_str;
 // document.getElementById("showsecond").innerHTML= second_str;
 
 }

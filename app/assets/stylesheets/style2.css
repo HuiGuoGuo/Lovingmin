@@ -12,7 +12,4 @@ ul{list-style:none outside none;}
 .timeline-date ul li dl{margin-top:-5px;}
 .timeline-date ul li dl.right{background:url() no-repeat 0 0;float:left;margin-left:35px;margin-top:-5px;display:block;background-color:#FFBB42;height:40px;width:216px;}	
 .timeline-date ul li dl span{display:block;font-size:16px;padding:0px 10px 0px 30px;color:#fff;line-height:40px;}
-.word1{
-  color: red;
-  margin-left: 250px;
-}
+.timeline-date ul li dl.right2{background:url() no-repeat 0 0;float:left;margin-left:35px;margin-top:-5px;display:block;background-color:#FFBB42;height:80px;width:216px;}	

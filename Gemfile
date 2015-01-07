@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
+#source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 gem 'rails', '3.2.13'
 
@@ -7,10 +8,10 @@ gem 'rails', '3.2.13'
 
 #   end
 group :production do
-gem 'pg'
+  #gem 'pg'
 end
 group :development, :test do
-gem 'mysql2'
+  gem 'mysql2'
 end
 
 
