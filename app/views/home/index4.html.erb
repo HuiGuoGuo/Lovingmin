@@ -9,18 +9,18 @@
 },5000);
       //停留3秒后隐藏，并显示下一个动画
       $("#first").delay(3000).hide(4000,function(){
-      $("#second").show(3000);
+        $("#second").show(3000);
         $("#second").eq(0).animate({height:'800px'
           },5000);
+
+        $("#second").delay(3000).hide(4000,function(){
+          $("#third").show(3000);
+          $("#third").eq(0).animate({height:'800px'
+            },5000);
+          });
         });
+      //停留3秒后隐藏，并显示下一个动画
 
-      $("#second").delay(3000).hide(4000,function(){
-
-      $("#third").show(3000);
-        $("#third").eq(0).animate({height:'800px'
-          },5000);
-
-        });
       });
 </script>
 
@@ -135,11 +135,6 @@
   </div>
 </div>
 
-<div class="btnbg">
-  <a href="<%=root_path%>"style="color:red;"><img src="/assets/rose.gif" width=80 height=60></img></a>
-</div>
-
-
 <div class="timeline" id="third">
 
   <div class="timeline-date">
@@ -159,32 +154,32 @@
         <span>M:&nbsp;好呀。</span>
       </dl>
       </li>
-    </ul>
-  </div>
 
-  <div class="timeline-date">
-    <ul>
-      <h2 class="second" style="position: relative;">
-        <span>2015年</span>
-      </h2>
       <li>
-      <h3>09.03<span>2012</span></h3>
+      <h3>01.01<span>2015</span></h3>
       <dl class="right">
-        <span>那一年的今天！</span>
+        <span>这样,相识，相知，相爱</span>
       </dl>
       </li>
       <li>
-      <h3>08.15<span>2012</span></h3>
+      <h3>01.01<span>2015</span></h3>
       <dl class="right">
-        <span>前端之路慢慢修远！</span>
+        <span>我希望这样一直</span>
       </dl>
       </li>
       <li>
-      <h3>08.15<span>2012</span></h3>
+      <h3>01.01<span>2015</span></h3>
       <dl class="right">
-        <span>前端之路慢慢修远！</span>
+        <span>走下去。。。</span>
       </dl>
       </li>
     </ul>
   </div>
 </div>
+
+<div class="btnbg">
+  <a href="<%=root_path%>"style="color:red;"><img src="/assets/rose.gif" width=80 height=60></img></a>
+</div>
+
+
+
