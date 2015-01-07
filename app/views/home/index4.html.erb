@@ -1,13 +1,27 @@
 
+<div class="showtime"style="display:none;">
+  <h4 id="showtimes"> </h4>
+  <h3 id="showday"> </h3>
+  <h2 id="showhours"> </h2>
+  <a id="showmini" > </a>
+</div> 
 <script type="text/javascript">
   $(function(){
-      $(".timeline").eq(0).animate({
-height:'600px'
-},3000);
+      $("#second").hide();
+      $("#first").hide();
+      $("#first").show(3000);
+      $("#first").eq(0).animate({height:'800px'
+},5000);
+      //停留3秒后隐藏，并显示下一个动画
+      $("#first").delay(3000).hide(4000,function(){
+      $("#second").show(3000);
+        $("#second").eq(0).animate({height:'800px'
+          },5000);
+        });
       });
 </script>
 
-<div class="timeline">
+<div class="timeline" id="first">
 
   <div class="timeline-date">
     <ul>
@@ -45,9 +59,65 @@ height:'600px'
         <span>前端之路慢慢修远！</span>
       </dl>
       </li>
+      <li>
+      <h3>08.15<span>2012</span></h3>
+      <dl class="right">
+        <span>前端之路慢慢修远！</span>
+      </dl>
+      </li>
     </ul>
   </div>
 </div>
 
 
 
+<div class="timeline" id="second">
+
+  <div class="timeline-date">
+    <ul>
+      <h2 class="second" style="position: relative;">
+        <span>2014年</span>
+      </h2>
+      <li>
+      <h3>111<span>2014</span></h3>
+      <dl class="right">
+        <span>H:&nbsp;你好</span>
+      </dl>
+      </li>
+      <li>
+      <h3>08.15<span>2013</span></h3>
+      <dl class="right">
+        <span>为了时间轴奋斗吧！</span>
+      </dl>
+      </li>
+    </ul>
+  </div>
+  <div class="timeline-date">
+    <ul>
+      <h2 class="second" style="position: relative;">
+        <span>2015年</span>
+      </h2>
+      <li>
+      <h3>09.03<span>2012</span></h3>
+      <dl class="right">
+        <span>那一年的今天！</span>
+      </dl>
+      </li>
+      <li>
+      <h3>08.15<span>2012</span></h3>
+      <dl class="right">
+        <span>前端之路慢慢修远！</span>
+      </dl>
+      </li>
+      <li>
+      <h3>08.15<span>2012</span></h3>
+      <dl class="right">
+        <span>前端之路慢慢修远！</span>
+      </dl>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="btnbg">
+<a href="<%=root_path%>"style="color:red;">动动你的小手，回到首页</a>
+</div>

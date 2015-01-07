@@ -8,10 +8,11 @@ canvas {
     padding:0;
     margin:0;
 }
-div.btnbg {
-    position:fixed;
-    left:0;
-    top:0;
+.btnbg {
+  position:fixed;
+  float:right;
+  top:30px;
+  font-size:30px;
 }
 .main{
   position:fixed;
@@ -44,6 +45,12 @@ div.btnbg {
   position:fixed;
   top:0px;
   margin-left: 400px;
+  margin-right: auto;
+}
+.bottom{
+  position:fixed;
+  top: 900px;
+  margin-left: 0px;
   margin-right: auto;
 }
 
