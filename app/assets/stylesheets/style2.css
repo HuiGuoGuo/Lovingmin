@@ -2,7 +2,7 @@
 body,h2,ul,h3{padding:0;margin:0;}
 ul{list-style:none outside none;}
 /* timeline */
-.timeline{background:url("../assets/line4.png") repeat-y 50px 0;overflow:hidden;position:relative;height:100px;margin:20px 10px;width:520px;margin:40px auto 0 auto;}
+.timeline{background:url("../assets/line4.png") repeat-y 50px 0;overflow:hidden;position:relative;height:120px;margin:20px 10px;width:520px;margin:40px auto 0 auto;}
 .timeline-date{overflow:hidden;position:relative;}
 .timeline-date h2{background:url("../assets/icon9.png") no-repeat 10px 0;height:87px;margin-bottom:20px;}
 .timeline-date h2 span{color:#999999;display:inline-block;font-size:22px;margin:30px 0px 0 110px;}
