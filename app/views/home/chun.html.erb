@@ -4,7 +4,7 @@
   $(function(){
     $(".showtime").hide();
     //为本人
-    var dialog = jDialog.confirm('<a style="color:red;margin-left:30px;font-size:28px;"><font face="华文行楷">你是真的小星星吗?</font></a>',{
+    var dialog = jDialog.confirm('<a style="color:green;margin-left:28px;font-size:28px;"><font face="华文行楷">你是真的<a style="color:red;font-size:35px;">小敏?</a></font></a>',{
     handler : function(button,dialog) {
       $(".showtime").show(3000);
       $("#show_color").html("<%= j(render :partial => "show_color")%>");
@@ -17,7 +17,7 @@
       dialog.close();
 
       //喜欢
-      var dialog2 = jDialog.confirm2('<a style="color:red;margin-left:20px;font-size:28px;"><font face="华文行楷">那你喜欢小星星吗?</font></a>',{
+      var dialog2 = jDialog.confirm2('<a style="color:green;margin-left:20px;font-size:28px;"><font face="华文行楷">那你喜欢<a style="color:red;font-size:35px;">小敏?</a></font></a>',{
       handler : function(button,dialog) {
         dialog2.close();
         var dialog4 = jDialog.confirm3('<a style="color:red;margin-left:20px;font-size:28px;"><font face="华文行楷">你的性别?</font></a>',{
