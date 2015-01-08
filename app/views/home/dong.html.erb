@@ -1,29 +1,55 @@
 
 <body onLoad= "marquee()">
   <div class="color"style="opacity:0.45;background:;">
-    <form name="show" style="margin-left:400px;margin-top:50px;">
-      <textarea rows=25 cols=60 wrap="virtual" name="marquee1" style="color:red;"></textarea>
+    <div style="margin-left:350px;margin-top:20px;font-size:40px;">
+      我想对你说:
+    </div>
+    <form name="show" style="margin-left:350px;margin-top:100px;">
+      <textarea rows=10 cols=20 wrap="virtual" name="marquee1" style="color:red;font-size:30px;"></textarea>
     </form>
   </div>
 </body>
+  <div class="color"style="margin-left:400px;top:600px;"id ="love" >
+    <a style="font-size:50px;">我&nbsp;&nbsp;<img src="/assets/taoxin.jpg" width=150 height=150></img>&nbsp;&nbsp;你</a>
+  </div>
+  <div class="color"style="margin-left:600px;top:800px;" >
+    版权所有@hui
+    </br>
+    thank heroku.com | github.com | A51.com
+    </div>
+<style>
+
+
+  .footer{
+    position: fixed;
+    bottom: 0;
+    background-color: #AAA;
+    width: 100%;
+}
+
+</style>
 
 <script>
 <!--
 var i = 0
-var showString= "见到你的第一面起"
-	+	"今天我们来到了世界浪漫之都巴黎，在异国它乡，我们第一次找到了真爱！"
-	+	"Get more easy to use yet powerful and useful JavaScripts at my website.  You will be "
-	+	"transfered in a few seconds."
+var showString= "见到你的第一面起      "
+	+	"我就决定            "      
+	+	"要保护你，爱护你      "
+	+	"不让你受伤害          "
+        +       "相信我              "
+        +       "你每天要开心哟        "
+        +       "(^_^)/~~              "
 function marquee()
 {
+  $("#love").hide();
 var stringLength= showString.length
 document.show.marquee1.value= document.show.marquee1.value + showString.charAt(i)
 i++
-var timeID= setTimeout("marquee()",10)
+var timeID= setTimeout("marquee()",200)
 if (i >= stringLength)
 {
   clearTimeout(timeID); i=0; 
-//location.href="http://www.baidu.com"
+  $("#love").show(3000);
 }
 }
 
