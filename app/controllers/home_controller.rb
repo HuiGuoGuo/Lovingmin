@@ -5,13 +5,17 @@ class HomeController < ApplicationController
 
   end
 
-  def index3
+  def chun
     @time = Time.now.strftime("%Y年%m月%d日")
   end
 
-  def index4
+  def xia 
   end
-  def index5
+
+  def qiu 
+  end
+
+  def dong 
   end
 
  def to_time(time)

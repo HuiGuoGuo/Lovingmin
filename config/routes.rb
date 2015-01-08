@@ -1,9 +1,10 @@
 LovingApp::Application.routes.draw do
   get "home/index"
   get "home/index2"
-  get "home/index3"
-  get "home/index4"
-  get "home/index5"
+  get "home/chun"
+  get "home/xia"
+  get "home/qiu"
+  get "home/dong"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -54,7 +55,7 @@ LovingApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'home#index3'
+   root :to => 'home#chun'
 
   # See how all your routes lay out with "rake routes"
 
