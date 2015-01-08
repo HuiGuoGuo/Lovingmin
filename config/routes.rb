@@ -5,6 +5,11 @@ LovingApp::Application.routes.draw do
   get "home/xia"
   get "home/qiu"
   get "home/dong"
+  match '/cun' => "home#chun"
+  match '/xia' => "home#xia"
+  match '/qiu' => "home#qiu"
+  match '/dong' => "home#dong"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
