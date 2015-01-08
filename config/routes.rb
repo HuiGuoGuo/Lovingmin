@@ -9,6 +9,7 @@ LovingApp::Application.routes.draw do
   match '/xia' => "home#xia"
   match '/qiu' => "home#qiu"
   match '/dong' => "home#dong"
+  root :to => 'home#chun'
 
 
   # The priority is based upon order of creation:
@@ -60,7 +61,6 @@ LovingApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'home#chun'
 
   # See how all your routes lay out with "rake routes"
 
