@@ -1,7 +1,7 @@
 #source 'https://rubygems.org'
 source 'https://ruby.taobao.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.21'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -13,6 +13,7 @@ end
 group :development, :test do
   gem 'mysql2'
 end
+gem 'rails_12factor'
 
 
 
